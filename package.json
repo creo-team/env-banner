@@ -1,24 +1,28 @@
 {
     "name": "@creo/env-banner",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "SSR-safe environment banner component for React applications",
     "author": "Colten Krauter <coltenkrauter>",
     "main": "dist/index.js",
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
-    "homepage": "https://github.com/krauters/env-banner",
+    "homepage": "https://github.com/creo-team/env-banner",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/krauters/env-banner.git"
+        "url": "git+https://github.com/creo-team/env-banner.git"
     },
     "scripts": {
         "build": "tsc",
         "fix": "npm run lint -- --fix",
         "lint": "npx eslint src/**/*.ts src/**/*.tsx",
         "lint:examples": "npx eslint examples/**/*.tsx",
-        "prepublishOnly": "npm run build",
-        "test": "npm run lint",
-        "upgrade:all": "npx npm-check-updates --upgrade && npm install"
+        "prepublishOnly": "npm run build && npm test",
+        "test": "vitest",
+        "test:ui": "vitest --ui",
+        "test:run": "vitest run",
+        "test:coverage": "vitest run --coverage",
+        "upgrade:all": "npx npm-check-updates --upgrade && npm install",
+        "example": "npm run build && cd examples/standalone && npm install && npm run dev"
     },
     "keywords": [
         "react",
@@ -35,9 +39,15 @@
     },
     "devDependencies": {
         "@krauters/eslint-config": "latest",
+        "@testing-library/react": "^14.0.0",
+        "@types/node": "^20.0.0",
         "@types/react": "^18.3.0",
+        "@vitejs/plugin-react": "^4.0.0",
+        "happy-dom": "^12.0.0",
         "react": "^18.3.0",
-        "typescript": "^5.7.0"
+        "react-dom": "^18.3.0",
+        "typescript": "^5.7.0",
+        "vitest": "^1.0.0"
     },
     "files": [
         "dist"

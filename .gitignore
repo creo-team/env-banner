@@ -31,6 +31,8 @@ out/
 # Testing
 coverage/
 .nyc_output/
+*.coverage
+examples/test-spacing.html
 
 # Misc
 *.log

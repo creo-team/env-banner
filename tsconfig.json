@@ -24,7 +24,10 @@
     "exclude": [
         "node_modules",
         "dist",
-        "examples"
+        "examples",
+        "src/**/*.test.tsx",
+        "src/test/**/*",
+        "vitest.config.ts"
     ],
     "include": [
         "src/**/*"

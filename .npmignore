@@ -11,3 +11,6 @@ eslint.config.js
 # Development files
 *.log
 .DS_Store
+
+# Standalone example app
+examples/standalone/

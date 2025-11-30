@@ -2,9 +2,9 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/github/v/release/krauters/env-banner)
+![Version](https://img.shields.io/github/v/release/creo-team/env-banner)
 [![npm version](https://img.shields.io/npm/v/@creo/env-banner.svg?style=flat-square)](https://www.npmjs.org/package/@creo/env-banner)
-![License](https://img.shields.io/github/license/krauters/env-banner)
+![License](https://img.shields.io/github/license/creo-team/env-banner)
 
 </div>
 
@@ -31,6 +31,9 @@ import { EnvironmentBanner } from '@creo/env-banner'
 - 🎯 **TypeScript Support** - Fully typed for excellent DX
 - 🔧 **Highly Configurable** - Customize colors, position, content, and more
 - ⚡ **Next.js App Router Ready** - Works seamlessly with server components
+- 🎨 **Custom Color Maps** - Define your own environment color schemes
+- 💅 **Flexible Styling** - Override any component's styles
+- ✅ **Well Tested** - Comprehensive test suite with Vitest
 
 ## Installation
 
@@ -96,6 +99,44 @@ function App() {
 }
 ```
 
+### Custom Color Mapping
+
+Define your own environment colors:
+
+```tsx
+const customColors = {
+    production: { bg: '#dc2626', border: '#b91c1c', text: '#ffffff' },
+    hotfix: { bg: '#f97316', border: '#ea580c', text: '#ffffff' },
+    canary: { bg: '#8b5cf6', border: '#7c3aed', text: '#ffffff' }
+}
+
+<EnvironmentBanner 
+    environment="canary" 
+    colorMap={customColors}
+/>
+```
+
+### Flexible Style Overrides
+
+Customize any part of the component:
+
+```tsx
+<EnvironmentBanner
+    environment="development"
+    // Override banner styles
+    style={{ backdropFilter: 'blur(10px)' }}
+    // Override environment badge
+    environmentStyle={{ 
+        borderRadius: '20px',
+        textTransform: 'capitalize' 
+    }}
+    // Override container
+    containerStyle={{ maxWidth: '1200px' }}
+    // Override time display
+    timeStyle={{ fontWeight: 'bold' }}
+/>
+```
+
 ### Next.js App Router Example
 
 ```tsx
@@ -138,14 +179,20 @@ export default function RootLayout({
 | `backgroundColor` | `string` | Based on environment | Background color of the banner |
 | `textColor` | `string` | `'#ffffff'` | Text color of the banner |
 | `borderColor` | `string` | Based on backgroundColor | Border color of the banner |
+| `colorMap` | `Record<string, Colors>` | `undefined` | Custom color mapping for environments |
 | `className` | `string` | `''` | Additional CSS class names |
 | `position` | `'fixed-top' \| 'fixed-bottom' \| 'static'` | `'fixed-top'` | Banner position |
 | `style` | `React.CSSProperties` | `{}` | Custom inline styles |
+| `environmentStyle` | `React.CSSProperties` | `{}` | Custom styles for environment badge |
+| `containerStyle` | `React.CSSProperties` | `{}` | Custom styles for container |
+| `rightContentStyle` | `React.CSSProperties` | `{}` | Custom styles for right content |
+| `timeStyle` | `React.CSSProperties` | `{}` | Custom styles for time display |
 | `zIndex` | `number` | `9999` | Z-index when position is fixed |
 | `deployTime` | `string` | `undefined` | ISO string of deployment time |
 | `showDeployTime` | `boolean` | `true` | Whether to show deploy time |
 | `timezone` | `string` | Local timezone | Timezone for deploy time display |
 | `padding` | `string` | `'8px 16px'` | Banner padding |
+| `containerPadding` | `string` | `'0 20px'` | Inner container padding |
 | `fontSize` | `string` | `'14px'` | Font size |
 | `fontWeight` | `string \| number` | `600` | Font weight |
 | `borderWidth` | `string` | `'1px'` | Border width |
@@ -255,7 +302,7 @@ module.exports = {
 
 ```bash
 # Clone the repo
-git clone https://github.com/krauters/env-banner.git
+git clone https://github.com/creo-team/env-banner.git
 
 # Install dependencies
 npm install
@@ -265,6 +312,42 @@ npm run build
 
 # Run linting
 npm run lint
+
+# Run tests
+npm test
+
+# Run tests with UI
+npm run test:ui
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Running Examples
+
+#### Option 1: Standalone Example App
+
+```bash
+# Navigate to the standalone example
+cd examples/standalone
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+
+# Open http://localhost:3000
+```
+
+#### Option 2: Test in Your Own App
+
+```bash
+# From the env-banner root directory
+npm link
+
+# In your app directory
+npm link @creo/env-banner
 ```
 
 ### Testing Locally
