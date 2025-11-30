@@ -1,0 +1,13 @@
+# Source files
+src/
+examples/
+
+# Config files
+.github/
+tsconfig.json
+tsconfig.eslint.json
+eslint.config.js
+
+# Development files
+*.log
+.DS_Store
