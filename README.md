@@ -367,6 +367,17 @@ npm link @creo/env-banner
 npm unlink @creo/env-banner
 ```
 
+## Development
+
+```bash
+npm install
+npm run lint
+npm run fix
+npm test
+```
+
+Uses [@creo-team/eslint-config](https://www.npmjs.com/package/@creo-team/eslint-config) for linting.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.

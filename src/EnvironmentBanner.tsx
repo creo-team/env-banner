@@ -1,8 +1,6 @@
 import React from 'react'
 
 export interface EnvironmentBannerProps {
-	// eslint-disable-next-line prettier/prettier
-
 	/**
 	 * Background color of the banner. Defaults to appropriate color based on environment.
 	 */
