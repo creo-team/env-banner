@@ -38,7 +38,7 @@
         "react": ">=16.8.0"
     },
     "devDependencies": {
-        "@creo-team/eslint-config": "^2.4.1",
+        "@creo-team/eslint-config": "^2.4.3",
         "@testing-library/react": "^14.0.0",
         "@types/node": "^20.0.0",
         "@types/react": "^18.3.0",
