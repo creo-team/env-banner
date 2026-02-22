@@ -17,6 +17,7 @@ Instructions for AI coding agents working in this codebase. For full context, se
 - **Types in `types.ts`** — never scatter type definitions across implementation files
 - **Defensive guards** — verify assumptions with `if` checks and logging
 - No `any` — use proper TypeScript types
+- Version bumps — increment `package.json` version with every push to `main`. Feature branches: one bump before merge
 - Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`
 
 ## Commands

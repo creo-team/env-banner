@@ -28,6 +28,7 @@ Lightweight, SSR-safe React component for displaying environment banners. Identi
 - **Defensive guards** — double-check assumptions with `if` checks and logging before proceeding
 - Functions under 50 lines — if it's longer, extract
 - No `any` — use proper TypeScript types
+- Version bumps — increment `package.json` version with every push to `main`. Feature branches: one bump before merge
 - Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`
 
 ### Documentation Standards
