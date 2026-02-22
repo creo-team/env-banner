@@ -378,9 +378,12 @@ npm test
 
 Uses [@creo-team/eslint-config](https://www.npmjs.com/package/@creo-team/eslint-config) for linting.
 
-## Contributing
+## Docs
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+| Document | Purpose |
+|----------|---------|
+| [CLAUDE.md](./CLAUDE.md) | Project conventions and architecture |
+| [AGENTS.md](./AGENTS.md) | AI agent quick reference |
 
 ## License
 
