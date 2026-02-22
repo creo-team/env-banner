@@ -11,6 +11,10 @@ alwaysApply: true
 - **No narration comments** — code speaks for itself. Only comment genuinely complex logic. Never `// Get the user`, `// Return the result`, or section banners
 - **Enums and constants over magic values** — never use raw strings, numbers, or booleans as identifiers
 - **Deduplicate ruthlessly** — shared data goes in shared modules, not copied between files
+- **TypeScript only** — no `.js`/`.jsx` in application code. Strict mode enabled
+- **Turbopack** — use `--turbopack` flag for Next.js dev and build (where applicable)
+- **Latest stable versions** — stay current with Next.js, React, and dependencies. Adopt new features early
+- **Skeleton loading** — every async boundary needs a loading state. Use `loading.tsx`, `Suspense` fallbacks, and skeleton UI. No blank screens
 - **Simple over clever** — readable beats terse. Flat logic over nested ternaries
 - **Functions under 50 lines** — if it's longer, extract
 - **`null` for intentionally empty, `undefined` for "not provided"**
