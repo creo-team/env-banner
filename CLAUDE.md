@@ -29,6 +29,8 @@ Lightweight, SSR-safe React component for displaying environment banners. Identi
 - **Skeleton loading** — every async boundary needs a loading state. Use `loading.tsx`, `Suspense` fallbacks, and skeleton UI. No blank screens
 - **Verb-driven function names** — prefer `get`, `remove`, `create`, `list`, `put`, `update` over `fetch`, `delete`, `post`
 - **Types in dedicated files** — interfaces, enums, and types live in `types.ts`
+- **Named imports** — prefer `{ thing } from 'thing'` over `import *`. Never use `import *` when named imports exist
+- **Named exports** — prefer named exports over `export default`. Exception: framework-convention files where default is required
 - **Defensive guards** — double-check assumptions with `if` checks and logging before proceeding
 - Functions under 50 lines — if it's longer, extract
 - No `any` — use proper TypeScript types

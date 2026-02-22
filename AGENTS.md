@@ -19,6 +19,8 @@ Instructions for AI coding agents working in this codebase. For full context, se
 - **Skeleton loading** — every async boundary needs a loading state. Use `loading.tsx`, `Suspense` fallbacks, and skeleton UI. No blank screens
 - **Verb-driven names** — `get`, `remove`, `create`, `list` over `fetch`, `delete`, `post`
 - **Types in `types.ts`** — never scatter type definitions across implementation files
+- **Named imports** — prefer `{ thing } from 'thing'` over `import *`
+- **Named exports** — prefer named exports over `export default` (except framework-convention files)
 - **Defensive guards** — verify assumptions with `if` checks and logging
 - No `any` — use proper TypeScript types
 - Version bumps — increment `package.json` version with every push to `main`. Feature branches: one bump before merge
