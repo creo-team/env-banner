@@ -8,8 +8,11 @@ Instructions for AI coding agents working in this codebase. For full context, se
 
 ## Core Rules
 
+- **Never nest** — early returns, flat code
+- **No narration comments** — only comment non-obvious intent or trade-offs
 - **SSR-safe** — no client hooks or browser APIs
 - **Zero dependencies** — pure React with inline styles
+- **Simple over clever** — readable beats terse
 - No `any` — use proper TypeScript types
 - Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`
 

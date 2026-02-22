@@ -18,9 +18,12 @@ Lightweight, SSR-safe React component for displaying environment banners. Identi
 
 ## Key Conventions
 
+- **Never nest** — early returns, flat code. If you're indenting more than once, refactor
+- **No narration comments** — code speaks for itself. Only comment non-obvious intent or trade-offs
 - **SSR-safe** — no `useEffect`, `useState`, or browser APIs in the component
 - **Zero dependencies** — pure React with inline styles
-- Functions under 50 lines, prefer early returns
+- **Simple over clever** — readable beats terse
+- Functions under 50 lines — if it's longer, extract
 - No `any` — use proper TypeScript types
 - Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`
 
