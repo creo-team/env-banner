@@ -23,6 +23,9 @@ Lightweight, SSR-safe React component for displaying environment banners. Identi
 - **SSR-safe** — no `useEffect`, `useState`, or browser APIs in the component
 - **Zero dependencies** — pure React with inline styles
 - **Simple over clever** — readable beats terse
+- **Verb-driven function names** — prefer `get`, `remove`, `create`, `list`, `put`, `update` over `fetch`, `delete`, `post`
+- **Types in dedicated files** — interfaces, enums, and types live in `types.ts`
+- **Defensive guards** — double-check assumptions with `if` checks and logging before proceeding
 - Functions under 50 lines — if it's longer, extract
 - No `any` — use proper TypeScript types
 - Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`

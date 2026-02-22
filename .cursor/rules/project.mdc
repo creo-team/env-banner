@@ -1,0 +1,40 @@
+---
+description: Project overview and architecture for the env-banner component
+globs:
+alwaysApply: true
+---
+# Env Banner Project
+
+Lightweight, SSR-safe React component for displaying environment banners. Identifies development, staging, and preview environments at a glance. Zero dependencies, fully typed. Published to npm as `@creo/env-banner`.
+
+## Required Reading
+
+- `CLAUDE.md` — comprehensive project instructions
+- `AGENTS.md` — AI agent quick reference
+
+## Architecture
+
+```
+src/
+├── index.ts        # Component and exports
+└── test/
+    └── setup.ts    # Vitest setup
+examples/
+└── standalone/     # Next.js example app
+```
+
+## Key Constraints
+
+- **SSR-safe** — no client hooks or browser APIs
+- **Zero dependencies** — pure React with inline styles
+- **npm published** — changes affect downstream consumers
+
+## Release Flow
+
+1. Bump `version` in `package.json`, push to `main`
+2. `github-release.yaml` creates tag + GitHub Release (uses `GH_PAT`)
+3. `release: created` triggers `npm-publish.yaml` → publishes to npm
+
+## Verification
+
+Before submitting: `npm test && npm run build`.

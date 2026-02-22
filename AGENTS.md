@@ -13,6 +13,9 @@ Instructions for AI coding agents working in this codebase. For full context, se
 - **SSR-safe** — no client hooks or browser APIs
 - **Zero dependencies** — pure React with inline styles
 - **Simple over clever** — readable beats terse
+- **Verb-driven names** — `get`, `remove`, `create`, `list` over `fetch`, `delete`, `post`
+- **Types in `types.ts`** — never scatter type definitions across implementation files
+- **Defensive guards** — verify assumptions with `if` checks and logging
 - No `any` — use proper TypeScript types
 - Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`
 

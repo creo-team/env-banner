@@ -1,0 +1,45 @@
+---
+description: Code style conventions for the env-banner component
+globs:
+alwaysApply: true
+---
+# Code Style
+
+## Core Principles
+
+- **Never nest** — early returns, flat code. If you're indenting more than once inside a function, refactor
+- **No narration comments** — code speaks for itself. Only comment genuinely complex logic. Never `// Get the user`, `// Return the result`, or section banners
+- **Enums and constants over magic values** — never use raw strings, numbers, or booleans as identifiers
+- **Deduplicate ruthlessly** — shared data goes in shared modules, not copied between files
+- **Simple over clever** — readable beats terse. Flat logic over nested ternaries
+- **Functions under 50 lines** — if it's longer, extract
+- **`null` for intentionally empty, `undefined` for "not provided"**
+- **Verb-driven function names** — prefer `get`, `remove`, `create`, `list`, `put`, `update` over `fetch`, `delete`, `post`. Name functions for what they do, not the HTTP method
+- **Types in dedicated files** — interfaces, enums, and types live in `types.ts`. Never scatter type definitions across implementation files
+- **Defensive guards** — double-check assumptions with `if` checks and logging. Don't trust that data is what you expect — verify and log when it isn't
+- **Generators when appropriate** — use generator functions for iteration, lazy evaluation, and streaming patterns where they simplify the code
+- **Descriptive variable names** — `bannerPosition` not `pos`, `environmentName` not `env`
+- **SSR-safe** — no `useEffect`, `useState`, or browser APIs in the component
+- **Zero dependencies** — pure React with inline styles
+
+## Naming Conventions
+
+| Element | Convention | Example |
+|---|---|---|
+| Files | kebab-case | `env-banner.ts`, `banner-utils.ts` |
+| Functions | camelCase | `getEnvironment()`, `resolveBannerStyle()` |
+| Types/Interfaces | PascalCase | `BannerProps`, `EnvironmentConfig` |
+| Enums | PascalCase name, UPPER_SNAKE values | `enum BannerPosition { Top = 'TOP' }` |
+| Constants | UPPER_SNAKE | `DEFAULT_COLORS`, `KNOWN_ENVIRONMENTS` |
+
+## Import Order
+
+1. External packages (React)
+2. Internal modules (sibling files)
+
+## Creo Standards
+
+- **ESLint**: `@creo-team/eslint-config` in every project
+- **Releases**: `creo-team/action-release` via `github-release.yaml` workflow
+- **Versions**: bare semver — never prefix with `v`
+- **Commits**: conventional commits (`feat:`, `fix:`, `refactor:`), one change per commit
