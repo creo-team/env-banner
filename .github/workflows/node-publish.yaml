@@ -1,9 +1,10 @@
 name: Node Publish
-run-name: Node Publish [${{ github.ref_name }}] triggered by [${{ github.event_name }}/${{ github.actor }}]
+run-name: >-
+  Publish [${{ github.event.release.tag_name || github.ref_name }}]
 
 on:
   release:
-    types: published
+    types: [published]
   push:
     branches: '*'
   workflow_dispatch:
