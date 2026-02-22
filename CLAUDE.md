@@ -1,0 +1,49 @@
+# Env Banner — Claude Code Instructions
+
+## Project Overview
+
+Lightweight, SSR-safe React component for displaying environment banners. Identifies development, staging, and preview environments at a glance. Zero dependencies, fully typed.
+
+**Package:** `@creo/env-banner` (TypeScript, published to npm)
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Component | React (SSR-safe, no client hooks) |
+| Build | TypeScript compiler |
+| Testing | Vitest |
+| Linting | ESLint (`@creo-team/eslint-config`) |
+| Styling | Inline styles (zero dependencies) |
+
+## Key Conventions
+
+- **SSR-safe** — no `useEffect`, `useState`, or browser APIs in the component
+- **Zero dependencies** — pure React with inline styles
+- Functions under 50 lines, prefer early returns
+- No `any` — use proper TypeScript types
+- Conventional commits: `feat:`, `fix:`, `refactor:`, `chore:`
+
+## File Structure
+
+```
+src/
+├── index.ts           # Component and exports
+└── test/
+    └── setup.ts       # Vitest setup
+examples/
+└── standalone/        # Next.js example app
+```
+
+## Release Flow
+
+1. Bump `version` in `package.json`, push to `main`
+2. `github-release.yaml` creates tag + GitHub Release (uses `GH_PAT`)
+3. `release: created` triggers `npm-publish.yaml` → publishes to npm
+
+## Verification
+
+```bash
+npm test
+npm run build
+```
